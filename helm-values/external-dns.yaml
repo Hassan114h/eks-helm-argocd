@@ -1,0 +1,11 @@
+provider: aws
+env:
+  - name: AWS_DEFAULT_REGION
+    value: eu-west-2
+
+domainFilter:
+  - hassan114.click
+
+serviceAccount:
+  create: true
+  name: external-dns

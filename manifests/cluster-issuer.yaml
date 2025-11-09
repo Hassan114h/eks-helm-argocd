@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: issuer
+spec:
+  acme:
+    server: "https://acme-staging-v02.api.letsencrypt.org/directory"
+    email: "hassanhagi93@gmail.com"
+    privateKeySecretRef:
+      name: issuer #This will be used to store the account's private key
+    solvers:
+      - selector:
+          dnsZones:
+            - "hassan114.click"
+        dns01:
+          route53:
+            hostedZoneID: Z0952190E6PJC8Q98ZNX
+            region: eu-west-1
+  
