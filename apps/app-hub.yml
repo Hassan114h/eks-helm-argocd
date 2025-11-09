@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: the-app-hub
-  namespace: apps
   labels:
     app: the-app-hub
 spec: 
@@ -27,7 +26,6 @@ apiVersion: v1
 kind: Service 
 metadata:
   name: the-app-hub
-  namespace: apps
 spec: 
   selector:
     app: the-app-hub
@@ -48,7 +46,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata: 
   name: the-app-hub-ingress
-  namespace: apps
   annotations:
     cert-manager.io/cluster-issuer: "issuer"
 spec:
