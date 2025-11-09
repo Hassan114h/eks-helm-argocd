@@ -1,3 +1,4 @@
+# cert manager role
 resource "aws_iam_role" "cert_manager" {
   name = "cert-manager"
 
@@ -18,7 +19,7 @@ resource "aws_iam_role" "cert_manager" {
   })
 }
 
-# https://cert-manager.io/docs/configuration/acme/dns01/route53/#set-up-an-iam-role
+
 resource "aws_iam_role_policy" "cert_manager_route53" {
   name = "cert-manager-route53"
   role = aws_iam_role.cert_manager.id
@@ -60,8 +61,7 @@ resource "aws_eks_pod_identity_association" "cert_manager" {
   role_arn        = aws_iam_role.cert_manager.arn
 }
 
-#-------------------  External-DNS  -------------------
-
+# external dns role
 resource "aws_iam_role" "external_dns" {
   name = "external-dns"
 
@@ -82,7 +82,7 @@ resource "aws_iam_role" "external_dns" {
   })
 }
 
-# https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#iam-policy
+
 resource "aws_iam_role_policy" "external_dns_route53" {
   name = "external-dns-route53"
   role = aws_iam_role.external_dns.id
@@ -107,7 +107,7 @@ resource "aws_iam_role_policy" "external_dns_route53" {
     ]
   })
 }
-
+# namespace and service account specified here
 resource "aws_eks_pod_identity_association" "external_dns" {
   cluster_name    = aws_eks_cluster.eks.name
   namespace       = "external-dns"
