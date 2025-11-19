@@ -13,7 +13,7 @@
   Provisioned AWS and Kubernetes infrastructure using a consistent, repeatable infrastructure-as-code approach.
 
 - **Helm**  
-  Manages deployment of core Kubernetes add-ons including **NGINX Ingress**, **cert-manager**, **External-DNS**, **ArgoCD**, and **Prometheus/Grafana**.
+  Manages deployment of jubernetes resources including **NGINX Ingress**, **cert-manager**, **External-DNS**, **ArgoCD**, and **Prometheus/Grafana**.
 
 - **ArgoCD**  
   Implements GitOps-based continuous delivery by syncing application manifests from Git repositories.
