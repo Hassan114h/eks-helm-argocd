@@ -7,7 +7,7 @@
   Worker nodes in private subnets 
 
 - **EKS Pod Identity**  
-  Delivers fine-grained IAM permissions directly to pods—eliminating node-level credentials and securely enabling AWS API access for components such as **cert-manager** and **External-DNS**.
+  Delivers fine grained IAM permissions directly to pods eliminating node-level credentials and enabling access for resources such as **cert-manager** and **External-DNS**.
 
 - **Terraform**  
   Provisioned AWS and Kubernetes infrastructure using a consistent, repeatable infrastructure-as-code approach.
@@ -16,7 +16,7 @@
   Manages deployment of jubernetes resources including **NGINX Ingress**, **cert-manager**, **External-DNS**, **ArgoCD**, and **Prometheus/Grafana**.
 
 - **ArgoCD**  
-  Implements GitOps-based continuous delivery by syncing application manifests from Git repositories.
+  Implements GitOps based continuous delivery by syncing application manifests from Git repositories.
 
 - **NGINX Ingress Controller**  
   Routes external traffic into the cluster and provides HTTPS termination.
