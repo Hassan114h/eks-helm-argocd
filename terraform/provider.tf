@@ -18,11 +18,13 @@ provider "aws" {
 }
 
 data "aws_eks_cluster" "cluster" {
-  name = aws_eks_cluster.eks.name
+  name       = module.eks.cluster_name
+  depends_on = [module.eks]
 }
 
 data "aws_eks_cluster_auth" "cluster" {
-  name = data.aws_eks_cluster.cluster.name
+  name       = module.eks.cluster_name
+  depends_on = [module.eks]
 }
 
 

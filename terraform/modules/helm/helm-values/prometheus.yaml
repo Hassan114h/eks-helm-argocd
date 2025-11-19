@@ -1,0 +1,12 @@
+server:
+  persistentVolume:
+    enabled: true
+    storageClass: "gp2"
+    size: 10Gi
+alertmanager:
+  extraArgs:
+    cluster.advertise-address: "$(POD_IP):9094"
+  persistence:
+    enabled: true
+    storageClass: "gp2"
+    size: 10Gi    

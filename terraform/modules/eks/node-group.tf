@@ -28,6 +28,12 @@ resource "aws_iam_role_policy_attachment" "AmazonEKS_CNI_Policy" { #This permiss
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
 }
 
+resource "aws_iam_role_policy_attachment" "ebs_csi_attach" {
+  role       = aws_iam_role.node-group.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+}
+
+
 resource "aws_eks_node_group" "nodes" {
   cluster_name  = "eks-cluster"
   node_role_arn = aws_iam_role.node-group.arn
