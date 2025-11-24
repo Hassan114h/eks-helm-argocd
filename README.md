@@ -31,6 +31,7 @@
   Shows metrics based on application performance and cluster health. 
 
 
-** Set up == 1, to trigger alarm even when the instances are healthy
+# AlertManager
+## Set the rule, up == 1, to trigger alarm even when the instances are healthy, to get email 
 
 ![alt text](image.png)
