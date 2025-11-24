@@ -30,3 +30,7 @@
 - **Prometheus & Grafana**  
   Shows metrics based on application performance and cluster health. 
 
+
+** Set up == 1, to trigger alarm even when the instances are healthy
+
+![alt text](image.png)

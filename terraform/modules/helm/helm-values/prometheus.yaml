@@ -3,6 +3,27 @@ server:
     enabled: true
     storageClass: "gp2"
     size: 10Gi
+serverFiles:
+  alerting_rules.yml: 
+    groups:
+      - name: Instances
+        rules:
+          - alert: InstanceDown  #The alert is triggered if the instance is down for 50 seconds
+            expr: up == 1
+            for: 50s
+            labels:
+              severity: critical
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 50 seconds.'
+              summary: 'Instance {{ $labels.instance }} down'
+          - alert: APIHighRequestLatency
+            expr: api_http_request_latencies_second{quantile="0.5"} > 1
+            for: 5m
+            labels:
+              severity: critical            
+            annotations:
+              summary: "High request latency on {{ $labels.instance }}"
+              description: "{{ $labels.instance }} has a median request latency above 1s (current value: {{ $value }}s)"
 alertmanager:
   extraArgs:
     cluster.advertise-address: "$(POD_IP):9094"
@@ -10,3 +31,24 @@ alertmanager:
     enabled: true
     storageClass: "gp2"
     size: 10Gi    
+  config:
+    route:
+      group_by: ['alertname'] 
+      group_wait: 30s
+      group_interval: 5m 
+      receiver: critical/email-notifaction 
+      repeat_interval: 3h
+      routes:
+        - match:
+            severity: critical
+          receiver: 'critical/email-notifaction'
+    receivers:
+      - name: 'critical/email-notifaction'
+        email_configs:
+          - to: 'hassanhagi93@gmail.com'
+            from: 'mentistore32@gmail.com'  # source email
+            smarthost: 'smtp.gmail.com:587'
+            auth_username: 'mentistore32@gmail.com'
+            auth_password: '' # Pipeline
+ 
+    

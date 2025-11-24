@@ -34,6 +34,7 @@ resource "helm_release" "external_dns" {
   chart            = "external-dns"
   create_namespace = true
   namespace        = "external-dns"
+
   values = [
     "${file("${path.module}/helm-values/external-dns.yaml")}"
   ]
@@ -45,6 +46,12 @@ resource "helm_release" "prometheus" {
   namespace        = "monitoring"
   repository       = "https://prometheus-community.github.io/helm-charts"
   chart            = "prometheus"
+  depends_on = [
+    helm_release.nginx_ingress,
+    helm_release.cert_manager,
+    helm_release.external_dns, 
+  ]
+
   values = [
     "${file("${path.module}/helm-values/prometheus.yaml")}"
   ]
@@ -56,6 +63,12 @@ resource "helm_release" "grafana" {
   namespace        = "monitoring"
   repository       = "https://grafana.github.io/helm-charts"
   chart            = "grafana"
+  depends_on = [
+    helm_release.nginx_ingress,
+    helm_release.cert_manager,
+    helm_release.external_dns, 
+  ]
+
   values = [
     "${file("${path.module}/helm-values/grafana.yaml")}"
   ]
@@ -75,12 +88,17 @@ resource "helm_release" "grafana" {
 #   chart = "argo-cd"
 #   version = "5.19.15"
 #   timeout = "600"
+#   depends_on = [
+#     helm_release.nginx_ingress,
+#     helm_release.cert_manager,
+#     helm_release.external_dns, 
+#   ]
 
 #   create_namespace = true
 #   namespace = "argo-cd"
 
 #   values = [
-#       "${file("helm-values/argocd.yaml")}"
+#       "${file("${path.module}/helm-values/argocd.yaml")}"
 #    ]
 
 # }

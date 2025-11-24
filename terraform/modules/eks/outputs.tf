@@ -7,3 +7,6 @@ output "cluster_endpoint" {
   value = aws_eks_cluster.eks.endpoint
 }
 
+output "eks" {
+  value = aws_eks_cluster.eks
+}
