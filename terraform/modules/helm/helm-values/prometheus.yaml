@@ -9,14 +9,14 @@ serverFiles:
       - name: Instances
         rules:
           - alert: InstanceDown  #The alert is triggered if the instance is down for 50 seconds
-            expr: up == 1
+            expr: up == 0
             for: 50s
             labels:
               severity: critical
             annotations:
               description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 50 seconds.'
               summary: 'Instance {{ $labels.instance }} down'
-          - alert: APIHighRequestLatency
+          - alert: APIHighRequestLatency                     # This alert fires when most requests start responding slower than 1 second, you need to create your own API 
             expr: api_http_request_latencies_second{quantile="0.5"} > 1
             for: 5m
             labels:
@@ -49,6 +49,6 @@ alertmanager:
             from: 'mentistore32@gmail.com'  # source email
             smarthost: 'smtp.gmail.com:587'
             auth_username: 'mentistore32@gmail.com'
-            auth_password: '' # Pipeline
+            auth_password: '${SOURCE_AUTH_PASSWORD}' 
  
     

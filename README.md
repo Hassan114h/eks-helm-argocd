@@ -32,6 +32,6 @@
 
 
 # AlertManager
-## Set the rule, up == 1, to trigger alarm even when the instances are healthy, to get email 
+## Set the rule, up == 1, to trigger alarm even when the instances are healthy, to get an email alert example
 
 ![alt text](image.png)

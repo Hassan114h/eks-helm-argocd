@@ -81,24 +81,24 @@ resource "helm_release" "grafana" {
   ]
 }
 
-# # argocd
-# resource "helm_release" "argocd" {
-#   name = "argocd"
-#   repository = "https://argoproj.github.io/argo-helm/"
-#   chart = "argo-cd"
-#   version = "5.19.15"
-#   timeout = "600"
-#   depends_on = [
-#     helm_release.nginx_ingress,
-#     helm_release.cert_manager,
-#     helm_release.external_dns, 
-#   ]
+# argocd
+resource "helm_release" "argocd" {
+  name = "argocd"
+  repository = "https://argoproj.github.io/argo-helm/"
+  chart = "argo-cd"
+  version = "5.19.15"
+  timeout = "600"
+  depends_on = [
+    helm_release.nginx_ingress,
+    helm_release.cert_manager,
+    helm_release.external_dns, 
+  ]
 
-#   create_namespace = true
-#   namespace = "argo-cd"
+  create_namespace = true
+  namespace = "argo-cd"
 
-#   values = [
-#       "${file("${path.module}/helm-values/argocd.yaml")}"
-#    ]
+  values = [
+      "${file("${path.module}/helm-values/argocd.yaml")}"
+   ]
 
-# }
+}
