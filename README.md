@@ -30,6 +30,15 @@
 - **Prometheus & Grafana**  
   Shows metrics based on application performance and cluster health. 
 
+# ArgoCD
+
+![alt text](image-1.png)
+
+# Prometheus
+
+![alt text](image-3.png)
+
+![alt text](image-2.png)
 
 # AlertManager
 ## Set the rule, up == 1, to trigger alarm even when the instances are healthy, to get an email alert example

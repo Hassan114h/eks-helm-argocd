@@ -16,8 +16,8 @@ serverFiles:
             annotations:
               description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 50 seconds.'
               summary: 'Instance {{ $labels.instance }} down'
-          - alert: APIHighRequestLatency                     # This alert fires when most requests start responding slower than 1 second, you need to create your own API 
-            expr: api_http_request_latencies_second{quantile="0.5"} > 1
+          - alert: APIHighRequestLatency                     # This alert fires when most requests start responding slower than 1 second, you need to create your own API to expose this metric
+            expr: api_http_request_latencies_second{quantile="0.5"} > 1      
             for: 5m
             labels:
               severity: critical            

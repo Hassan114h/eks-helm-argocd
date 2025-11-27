@@ -4,7 +4,7 @@ datasources:
     datasources:
       - name: Prometheus
         type: prometheus
-        url: http://prometheus-server.monitoring.svc.cluster.local
+        url: http://prometheus-server.monitoring.svc.cluster.local #This is Prometheus ClusterIP DNS Address, Grafana will query Prometheus over HTTP to get it's metric
         isDefault: true
 
 
