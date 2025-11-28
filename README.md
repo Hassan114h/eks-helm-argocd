@@ -31,16 +31,14 @@
   Shows metrics based on application performance and cluster health. 
 
 # ArgoCD
-
-![alt text](image-1.png)
+<img width="1680" height="903" alt="Screenshot 2025-11-27 202247" src="https://github.com/user-attachments/assets/12cd97ab-3e02-476f-bfb6-f7f2f24a86f7" />
 
 # Prometheus
 
-![alt text](image-3.png)
-
-![alt text](image-2.png)
+<img width="1195" height="406" alt="Screenshot 2025-11-27 204641" src="https://github.com/user-attachments/assets/393c96bb-aef9-4c35-bd78-cbac1fb81985" />
+<img width="1911" height="807" alt="Screenshot 2025-11-27 204726" src="https://github.com/user-attachments/assets/3a7a0752-1083-4c0c-8e9c-6f9331456098" />
 
 # AlertManager
-## Set the rule, up == 1, to trigger alarm even when the instances are healthy, to get an email alert example
+## An example of how an email alert will look
 
 ![alt text](image.png)
