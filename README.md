@@ -1,44 +1,46 @@
 ## Infrastructure Overview
 
 - **Amazon EKS**  
-  Provides a fully managed Kubernetes control plane for secure and scalable container orchestration.
+  Provides a fully managed Kubernetes control plane for secure and scalable container orchestration
 
 - **EKS Managed Node Groups**  
-  Worker nodes in private subnets 
+  Provides worker nodes in private subnets to host Kubernetes Pods
 
 - **EKS Pod Identity**  
-  Delivers fine grained IAM permissions directly to pods eliminating node-level credentials and enabling access for resources such as **cert-manager** and **External-DNS**.
+  Delivers fine grained IAM permissions directly to pods eliminating node-level credentials and enabling access for resources such as **cert-manager**, **External-DNS**, **EBS-CSI Driver**
 
 - **Terraform**  
   Provisioned AWS and Kubernetes infrastructure using a consistent, repeatable infrastructure-as-code approach.
 
 - **Helm**  
-  Manages deployment of jubernetes resources including **NGINX Ingress**, **cert-manager**, **External-DNS**, **ArgoCD**, and **Prometheus/Grafana**.
-
-- **ArgoCD**  
-  Implements GitOps based continuous delivery by syncing application manifests from Git repositories.
+  Manages deployment of Kubernetes resources including **NGINX Ingress**, **cert-manager**, **External-DNS**, **ArgoCD**, and **Prometheus/Grafana**
 
 - **NGINX Ingress Controller**  
-  Routes external traffic into the cluster and provides HTTPS termination.
+  Routes external traffic into the cluster and provides SSL/TLS termination 
 
 - **cert-manager**  
-  Automates issuance and renewal of TLS certificates through Let’s Encrypt using Route53 DNS validation.
+  Automates issuance and renewal of TLS certificates through the ACME DNS-01 challenge using Route53 for domain validation
 
 - **External-DNS**  
-  Dynamically creates and updates Route53 DNS records for Kubernetes Services and Ingress resources.
+  Dynamically creates and updates Route53 DNS records based on Kubernetes Ingress resources
 
 - **Prometheus & Grafana**  
-  Shows metrics based on application performance and cluster health. 
+  Displays application and cluster performance metrics, configured with Persistent Volumes to retain data across restarts
+
+- **ArgoCD**  
+  Implements GitOps based continuous delivery by monitoring changes in the `apps/` directory and automatically applying changes to Kubernetes
 
 # ArgoCD
 <img width="1680" height="903" alt="Screenshot 2025-11-27 202247" src="https://github.com/user-attachments/assets/12cd97ab-3e02-476f-bfb6-f7f2f24a86f7" />
 
 # Prometheus
 
+## Configured Prometheus rules
 <img width="1195" height="406" alt="Screenshot 2025-11-27 204641" src="https://github.com/user-attachments/assets/393c96bb-aef9-4c35-bd78-cbac1fb81985" />
+
+## Prometheus targets  
 <img width="1911" height="807" alt="Screenshot 2025-11-27 204726" src="https://github.com/user-attachments/assets/3a7a0752-1083-4c0c-8e9c-6f9331456098" />
 
 # AlertManager
-## An example of how an email alert will look
-
+## An example of an email alert
 ![alt text](image.png)
