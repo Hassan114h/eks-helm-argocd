@@ -18,7 +18,7 @@
 - **NGINX Ingress Controller**  
   Routes external traffic into the cluster and provides SSL/TLS termination 
 
-- **cert-manager**  
+- **Cert-Manager**  
   Automates issuance and renewal of TLS certificates through the ACME DNS-01 challenge using Route53 for domain validation
 
 - **External-DNS**  
