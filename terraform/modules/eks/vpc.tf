@@ -4,14 +4,14 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "ECS-vpc"
+    Name = "EKS-vpc"
   }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
   tags = {
-    Name = "ECS-igw"
+    Name = "EKS-igw"
   }
 }
 

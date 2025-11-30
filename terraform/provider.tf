@@ -11,6 +11,13 @@ terraform {
       version = ">= 3.0.0"
     }
   }
+  backend "s3" {
+    bucket       = "hassan-eks-tf-13445"  # the bucket created below
+    key          = "terraform.tfstate"    # path inside the bucket
+    region       = "eu-west-1"
+    encrypt      = true
+    use_lockfile = true   # enables local lock file
+  }
 }
 
 provider "aws" {
