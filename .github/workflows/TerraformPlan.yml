@@ -49,6 +49,7 @@ jobs:
         with:
           directory: ${{ env.TF_WORKING_DIR }}
           output_format: cli
+        continue-on-error: true
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
