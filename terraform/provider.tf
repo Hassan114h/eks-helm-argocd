@@ -12,11 +12,11 @@ terraform {
     }
   }
   backend "s3" {
-    bucket       = "hassan-eks-tf-13445"  
-    key          = "terraform.tfstate"    # path inside the bucket
+    bucket       = "hassan-eks-tf-13445"
+    key          = "terraform.tfstate" # path inside the bucket
     region       = "eu-west-1"
     encrypt      = true
-    use_lockfile = true   # enables local lock file
+    use_lockfile = true # enables local lock file
   }
 }
 

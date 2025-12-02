@@ -50,7 +50,7 @@ resource "aws_eks_addon" "vpc_cni" {
   addon_name                  = "vpc-cni"
   resolve_conflicts_on_update = "OVERWRITE"
   depends_on = [
-  aws_eks_cluster.eks, 
+    aws_eks_cluster.eks,
   aws_iam_role_policy_attachment.eks_policy]
 }
 
@@ -59,7 +59,7 @@ resource "aws_eks_addon" "kube_proxy" {
   addon_name                  = "kube-proxy"
   resolve_conflicts_on_update = "OVERWRITE"
   depends_on = [
-  aws_eks_cluster.eks, 
+    aws_eks_cluster.eks,
   aws_iam_role_policy_attachment.eks_policy]
 }
 
@@ -68,7 +68,7 @@ resource "aws_eks_addon" "podidentityagent" {
   addon_name                  = "eks-pod-identity-agent"
   resolve_conflicts_on_update = "OVERWRITE"
   depends_on = [
-  aws_eks_cluster.eks, 
+    aws_eks_cluster.eks,
   aws_iam_role_policy_attachment.eks_policy]
 }
 
@@ -77,6 +77,6 @@ resource "aws_eks_addon" "ebs_csi" {
   addon_name                  = "aws-ebs-csi-driver"
   resolve_conflicts_on_update = "OVERWRITE"
   depends_on = [
-  aws_eks_cluster.eks, 
+    aws_eks_cluster.eks,
   aws_iam_role_policy_attachment.eks_policy]
 }
