@@ -12,7 +12,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket       = "hassan-eks-tf-13445"  # the bucket created below
+    bucket       = "hassan-eks-tf-13445"  
     key          = "terraform.tfstate"    # path inside the bucket
     region       = "eu-west-1"
     encrypt      = true
