@@ -16,6 +16,9 @@ This project delivers a production-ready application deployment on Amazon EKS, f
 - **Prometheus & Grafana**: Displays application and cluster performance metrics, configured with Persistent Volumes to retain data across restarts
 - **ArgoCD**: Implements GitOps based continuous delivery by monitoring changes in the `apps/` directory and automatically applying changes to Kubernetes
 
+# Architecture Diagram
+![ezgif-7ba59fb5c762d41b](https://github.com/user-attachments/assets/622679b7-2b9a-4328-901e-f9e373168a29)
+
 # ArgoCD
 <img width="900" height="406" alt="Screenshot 2025-11-27 202247" src="https://github.com/user-attachments/assets/12cd97ab-3e02-476f-bfb6-f7f2f24a86f7" />
 
