@@ -1,3 +1,5 @@
+<h1 align="center">⚙️ Production-Grade EKS Deployment with GitOps and Observability</h1>
+
 ## Navigation
 [Key Features](#key-features) • [Architecture Diagram](#architecture-diagram) •[ArgoCD/Prometheus/AlertManager/Grafana](#ArgoCD) • [App Walkthrough](#App-Walkthrough)
 
