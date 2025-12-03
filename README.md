@@ -17,7 +17,7 @@ This project delivers a production-ready application deployment on Amazon EKS, f
 - **ArgoCD**: Implements GitOps based continuous delivery by monitoring changes in the `apps/` directory and automatically applying changes to Kubernetes
 
 # ArgoCD
-<img width="1680" height="903" alt="Screenshot 2025-11-27 202247" src="https://github.com/user-attachments/assets/12cd97ab-3e02-476f-bfb6-f7f2f24a86f7" />
+<img width="1195" height="406" alt="Screenshot 2025-11-27 202247" src="https://github.com/user-attachments/assets/12cd97ab-3e02-476f-bfb6-f7f2f24a86f7" />
 
 # Prometheus
 
@@ -25,7 +25,7 @@ This project delivers a production-ready application deployment on Amazon EKS, f
 <img width="1195" height="406" alt="Screenshot 2025-11-27 204641" src="https://github.com/user-attachments/assets/393c96bb-aef9-4c35-bd78-cbac1fb81985" />
 
 ## Prometheus targets  
-<img width="1911" height="807" alt="Screenshot 2025-11-27 204726" src="https://github.com/user-attachments/assets/3a7a0752-1083-4c0c-8e9c-6f9331456098" />
+<img width="1911" height="406" alt="Screenshot 2025-11-27 204726" src="https://github.com/user-attachments/assets/3a7a0752-1083-4c0c-8e9c-6f9331456098" />
 
 # AlertManager
 ## An example of an email alert
@@ -36,3 +36,4 @@ This project delivers a production-ready application deployment on Amazon EKS, f
 
 
 ## App Walkthrough
+![ezgif-1b70917dae95fecb](https://github.com/user-attachments/assets/186cedc8-3874-4fa9-ad82-63d783836b5e)
