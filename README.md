@@ -19,7 +19,7 @@ This project delivers a production-ready application deployment on Amazon EKS, f
 - **ArgoCD**: Implements GitOps based continuous delivery by monitoring changes in the `apps/` directory and automatically applying changes to Kubernetes
 
 # Architecture Diagram
-![ezgif-7ba59fb5c762d41b](https://github.com/user-attachments/assets/622679b7-2b9a-4328-901e-f9e373168a29)
+![ezgif-85e90c0d951cb3cc](https://github.com/user-attachments/assets/9b5a0ec2-6839-4f69-8258-deeb8a1a7d75)
 
 # ArgoCD
 <img width="900" height="406" alt="Screenshot 2025-11-27 202247" src="https://github.com/user-attachments/assets/12cd97ab-3e02-476f-bfb6-f7f2f24a86f7" />
